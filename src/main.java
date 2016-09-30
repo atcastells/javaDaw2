@@ -14,7 +14,7 @@ public class main {
 
         while (menuControl != EXIT){
             for (int i = 0; i < data.menu.length; i++){
-                System.out.print("#"+i+":\t"+data.menu[i]+"\n");
+                System.out.print("#"+(i+1)+":\t"+data.menu[i]+"\n");
             }
             System.out.print("Escriu una opció per al menu:");
             menuControl = funcioMenu(data.menu.length);
@@ -25,6 +25,7 @@ public class main {
                     for (String exercici:data.operacions){
                         System.out.print(" - "+exercici+"\n");
                     }
+                    gui.imprimir("Escriu el nom del exercici: ");
                     String opcioOperacions = gui.readString();
                     for (String exercici:data.operacions){
                         if(exercici.equalsIgnoreCase(opcioOperacions)){
