@@ -28,6 +28,16 @@ public class gui {
             return (readInt(missatge));
         }
     }
+    float readFloat(){
+        Scanner sc = new Scanner(System.in);
+        try {
+            return sc.nextFloat();
+        } catch (InputMismatchException e) {
+            imprimir("Error d'entrada, introdueix una xifra!\n");
+            return (readFloat());
+        }
+    }
+
     String readString() {
         Scanner sc = new Scanner(System.in);
         String newString = sc.nextLine();
