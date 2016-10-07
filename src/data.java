@@ -5,4 +5,5 @@ public class data {
     static String[] menu = {"Operacions","Bifurcacions","Bucles","Sortir"};
     static String[] operacions = {"Velocitat","Graus","Circumferencia"};
     static String[] bifurcacions = {"Calculadora","Ciutats","IMC"};
+    static String[] bucles = {"10impars","positiuNegatiu","Mitjana"};
 }

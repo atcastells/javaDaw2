@@ -47,6 +47,17 @@ public class main {
                     }
                     break;
                 case 3: //Bucles
+                    System.out.print("Elegeix un exercici: \n");
+                    for (String exercici:data.bucles){
+                        System.out.print(" - "+exercici+"\n");
+                    }
+                    gui.imprimir("Escriu el nom del exercici: ");
+                    String opcioBucles = gui.readString();      //Hem de escriure Velocitat , graus , circumferencia
+                    for (String exercici:data.bucles){
+                        if(exercici.equalsIgnoreCase(opcioBucles)){
+                            bucles(opcioBucles);
+                        }
+                    }
                     break;
                 case 4:
                     break;
@@ -261,7 +272,40 @@ public class main {
         }
     }
 
+    void bucles(String programa){
+        gui gui = new gui();
+        Scanner teclat = new Scanner(System.in); //Es crea el scanner
+        if(programa.equalsIgnoreCase("10impars")) {
+            long producte = 1;
+
+            for (int i=1; i<20; i+=2){
+                producte = producte*i;
+            }
+            System.out.println("El producte dels 10 primers nombres impars és: "+producte);
+        }
+        else if(programa.equalsIgnoreCase("positiuNegatiu")){
+
+        }
+        else if(programa.equalsIgnoreCase("Mitjana")){
+            int limit = 10;
+            double[] mitjana = new double[10];
+            double total = 0.0;
+            /*Guardem xifres*/
+            for (int i = 0; i < mitjana.length; i++) {
+                gui.imprimir("Escriu el valor per calular la mitjana("+(i+1)+"): ");
+                mitjana[i] = teclat.nextFloat();
+                gui.ln();
+            }
+
+            /*Calculem mitjana*/
+            for(double xifra:mitjana){
+                total += xifra;
+            }
+
+            /*Imprimim resultat*/
+            total = total/mitjana.length;
+            gui.imprimir("El total es: "+total);
+            gui.enterContinue();
+        }
+    }
 }
-
-
-/**/
